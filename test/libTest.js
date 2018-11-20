@@ -17,6 +17,8 @@ const cube = function(number){
   return number*square(number);
 }
 
-//assertion test for map function//
-assert.deepEqual(map(double,[1,2,3]),[2,4,6]);
-console.log("Test for map function is passed.")
+describe('map',function(){
+  it('should return array with double all elements',function(){
+    assert.deepEqual(map(double,[1,2,3]),[2,4,6]);
+  });
+});
