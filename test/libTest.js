@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { map } = require('../src/lib.js');
+const { map, filter } = require('../src/lib.js');
 
 const isEven = function(number){
   return (number%2)==0;
@@ -38,5 +38,13 @@ describe('testing map function',function(){
     assert.deepEqual(map(cube,array1),[1,8,27]);
     assert.deepEqual(map(cube,array2),[27]);
     assert.deepEqual(map(cube,array3),[-1, 0, 27]);
+  });
+});
+
+describe('testing filter function' ,function(){
+  it('should return array with only even numbers ',function(){
+    assert.deepEqual(filter(isEven,[1,2,3,4,5,6]),[2,4,6]);
+    assert.deepEqual(filter(isEven,[1,3,6]),[6]);
+    assert.deepEqual(filter(isEven,[]),[]);
   });
 });
