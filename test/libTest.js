@@ -12,6 +12,7 @@ describe('testing map function',function(){
     array2 = [3];
     array3 = [-1 , 0, 3];
     emptyArray = [];
+    singleElement = [ 2 ];
   });
 
   describe('map' ,function(){
@@ -34,9 +35,17 @@ describe('testing map function',function(){
 
   describe('map' ,function(){
     it('of empty array should return empty array.',function(){
-      assert.deepEqual(map(double,emptyArray),[]);
-      assert.deepEqual(map(square,emptyArray),[]);
-      assert.deepEqual(map(cube,emptyArray),[]);
+      assert.deepEqual( map( double, emptyArray ), [] );
+    });
+  });
+  describe('map' ,function(){
+    it('of single element should return array with that mapping element',function(){
+      assert.deepEqual( map( double, singleElement ), [ 4 ] );
+    });
+  });
+  describe('map' ,function(){
+    it('should return array with same arity and mapping elements',function(){
+      assert.deepEqual( map( double, singleElement ), [ 4 ] );
     });
   });
 });
