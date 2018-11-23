@@ -1,16 +1,16 @@
-const map = function(funcRefference, array){
+const map = function( mapper, list ){
   let mappedArray = [];
-  for(let index=0; index<array.length; index++){
-    mappedArray[index] = funcRefference(array[index]);
+  for(let index=0; index<list.length; index++){
+    mappedArray[ index ] = mapper( list[ index ] );
   }
   return mappedArray;
 }
 
-const filter = function(funcRefference, array){
+const filter = function( predicate, list ){
   let filteredArray = [];
-  for(let index=0; index<array.length; index++){
-    if(funcRefference(array[index])){
-      filteredArray.push(array[index]);
+  for(let index=0; index<list.length; index++){
+    if( predicate( list[ index ] ) ){
+      filteredArray.push( list[ index ] );
     }
   }
   return filteredArray;
